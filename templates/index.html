@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Conjugation Practice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>French Verb Conjugation Practice</h1>
+
+        <div class="settings">
+            <h3>Select Tenses:</h3>
+            <div class="tense-filters">
+                {% for key, name in tenses.items() %}
+                <label>
+                    <input type="checkbox" class="tense-checkbox" value="{{ key }}" checked>
+                    {{ name }}
+                </label>
+                {% endfor %}
+            </div>
+
+            <h3>Verb Selection:</h3>
+            <div class="verb-filters">
+                <label>
+                    <span>Top verbs:</span>
+                    <select id="verb-rank">
+                        <option value="10" selected>Top 10</option>
+                        <option value="20">Top 20</option>
+                        <option value="50">Top 50</option>
+                        <option value="100">Top 100</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="checkbox" id="irregular-only" checked>
+                    Irregular verbs only
+                </label>
+            </div>
+
+            <h3>Pronouns:</h3>
+            <div class="pronoun-filters">
+                <label><input type="checkbox" class="pronoun-checkbox" value="0" checked> je</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="1" checked> tu</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="2" checked> il/elle</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="3" checked> on</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="4" checked> nous</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="5" checked> vous</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="6" checked> ils/elles</label>
+            </div>
+        </div>
+
+        <div class="score-board">
+            <span>Score: <strong id="correct-count">0</strong> / <strong id="total-count">0</strong></span>
+            <span id="percentage"></span>
+            <span class="review-count" id="review-count"></span>
+            <span class="mastered-count" id="mastered-count"></span>
+            <button id="reset-btn" class="btn-reset">Reset</button>
+        </div>
+
+        <div class="quiz-card">
+            <div class="verb-info">
+                <div class="verb-infinitive" id="verb-infinitive">-</div>
+            </div>
+
+            <div class="tense-label" id="tense-label">-</div>
+
+            <div class="conjugation-prompt">
+                <span class="pronoun" id="pronoun">-</span>
+                <input type="text" id="answer-input" placeholder="Type conjugation..." autocomplete="off" autofocus>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="buttons">
+                <button id="submit-btn" class="btn btn-primary">Check</button>
+                <button id="next-btn" class="btn btn-secondary" style="display: none;">Next</button>
+                <button id="skip-btn" class="btn btn-skip">Skip</button>
+            </div>
+        </div>
+
+        <div class="accent-helper">
+            <p>Click to insert accented characters:</p>
+            <div class="accent-buttons">
+                <button class="accent-btn" data-char="é">é</button>
+                <button class="accent-btn" data-char="è">è</button>
+                <button class="accent-btn" data-char="ê">ê</button>
+                <button class="accent-btn" data-char="ë">ë</button>
+                <button class="accent-btn" data-char="à">à</button>
+                <button class="accent-btn" data-char="â">â</button>
+                <button class="accent-btn" data-char="ù">ù</button>
+                <button class="accent-btn" data-char="û">û</button>
+                <button class="accent-btn" data-char="î">î</button>
+                <button class="accent-btn" data-char="ï">ï</button>
+                <button class="accent-btn" data-char="ô">ô</button>
+                <button class="accent-btn" data-char="ç">ç</button>
+                <button class="accent-btn" data-char="œ">œ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = null;
+        let correctCount = 0;
+        let totalCount = 0;
+
+        // Review queue: wrong answers that must appear again
+        // Each item: {key, verb, tense, pronoun_idx, correct, showAfter}
+        let reviewQueue = [];
+        let questionCounter = 0;  // Counts questions to know when to show reviews
+
+        // Mastery tracking: {questionKey: correctCount}
+        // 1 correct = reduced weight, 2 correct = mastered (excluded)
+        let masteryMap = {};
+
+        const REVIEW_DELAY_MIN = 2;  // Show review after at least 2 questions
+        const REVIEW_DELAY_MAX = 4;  // Show review within 4 questions
+        const CORRECT_TO_REMOVE = 2; // Need 2 correct answers to remove from review
+        const MASTERY_THRESHOLD = 2; // Need 2 correct to fully master
+
+        const verbInfinitive = document.getElementById('verb-infinitive');
+        const tenseLabel = document.getElementById('tense-label');
+        const pronoun = document.getElementById('pronoun');
+        const answerInput = document.getElementById('answer-input');
+        const feedback = document.getElementById('feedback');
+        const submitBtn = document.getElementById('submit-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const skipBtn = document.getElementById('skip-btn');
+        const correctCountEl = document.getElementById('correct-count');
+        const totalCountEl = document.getElementById('total-count');
+        const percentageEl = document.getElementById('percentage');
+        const reviewCountEl = document.getElementById('review-count');
+        const masteredCountEl = document.getElementById('mastered-count');
+        const resetBtn = document.getElementById('reset-btn');
+
+        function getSelectedTenses() {
+            const checkboxes = document.querySelectorAll('.tense-checkbox:checked');
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
+        function getSelectedPronouns() {
+            const checkboxes = document.querySelectorAll('.pronoun-checkbox:checked');
+            return Array.from(checkboxes).map(cb => parseInt(cb.value));
+        }
+
+        function updateReviewIndicator() {
+            const count = reviewQueue.length;
+            if (count > 0) {
+                reviewCountEl.textContent = `(${count} to review)`;
+                reviewCountEl.style.display = 'inline';
+            } else {
+                reviewCountEl.style.display = 'none';
+            }
+        }
+
+        function getMasteredKeys() {
+            return Object.keys(masteryMap).filter(k => masteryMap[k] >= MASTERY_THRESHOLD);
+        }
+
+        function getReducedWeightKeys() {
+            return Object.keys(masteryMap).filter(k => masteryMap[k] === 1);
+        }
+
+        function updateMasteredIndicator() {
+            const count = getMasteredKeys().length;
+            if (count > 0) {
+                masteredCountEl.textContent = `(${count} mastered)`;
+                masteredCountEl.style.display = 'inline';
+            } else {
+                masteredCountEl.style.display = 'none';
+            }
+        }
+
+        function addToReviewQueue(question) {
+            // Check if already in queue
+            const existing = reviewQueue.find(q => q.key === question.key);
+            if (existing) {
+                // Reset correct count and delay
+                existing.correctCount = 0;
+                existing.showAfter = questionCounter + REVIEW_DELAY_MIN +
+                    Math.floor(Math.random() * (REVIEW_DELAY_MAX - REVIEW_DELAY_MIN + 1));
+                return;
+            }
+
+            reviewQueue.push({
+                key: question.key,
+                verb: question.verb,
+                tense: question.tense,
+                tense_display: question.tense_display,
+                pronoun: question.pronoun,
+                pronoun_idx: question.pronoun_idx,
+                correct: question.correct,
+                correctCount: 0,
+                showAfter: questionCounter + REVIEW_DELAY_MIN +
+                    Math.floor(Math.random() * (REVIEW_DELAY_MAX - REVIEW_DELAY_MIN + 1))
+            });
+        }
+
+        function getNextReviewItem() {
+            // Find items that are due (showAfter <= questionCounter)
+            const dueItems = reviewQueue.filter(q => q.showAfter <= questionCounter);
+            if (dueItems.length > 0) {
+                return dueItems[Math.floor(Math.random() * dueItems.length)];
+            }
+            return null;
+        }
+
+        async function loadQuestion() {
+            const tenses = getSelectedTenses();
+            const pronouns = getSelectedPronouns();
+            if (tenses.length === 0) {
+                feedback.textContent = 'Please select at least one tense!';
+                feedback.className = 'feedback incorrect';
+                return;
+            }
+            if (pronouns.length === 0) {
+                feedback.textContent = 'Please select at least one pronoun!';
+                feedback.className = 'feedback incorrect';
+                return;
+            }
+
+            questionCounter++;
+
+            // Check if we should show a review item
+            const reviewItem = getNextReviewItem();
+
+            if (reviewItem) {
+                // Use the review item
+                currentQuestion = {
+                    verb: reviewItem.verb,
+                    tense: reviewItem.tense,
+                    tense_display: reviewItem.tense_display,
+                    pronoun: reviewItem.pronoun,
+                    pronoun_idx: reviewItem.pronoun_idx,
+                    correct: reviewItem.correct,
+                    key: reviewItem.key,
+                    isReview: true
+                };
+            } else {
+                // Fetch a new random question with verb filters
+                const maxRank = parseInt(document.getElementById('verb-rank').value);
+                const irregularOnly = document.getElementById('irregular-only').checked;
+
+                const response = await fetch('/api/question', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        tenses: tenses,
+                        maxRank: maxRank,
+                        irregularOnly: irregularOnly,
+                        pronouns: pronouns,
+                        masteredKeys: getMasteredKeys(),
+                        reducedWeightKeys: getReducedWeightKeys()
+                    })
+                });
+                currentQuestion = await response.json();
+
+                // Check if session is complete
+                if (currentQuestion.sessionComplete) {
+                    verbInfinitive.textContent = 'Session Complete!';
+                    tenseLabel.textContent = 'All questions mastered';
+                    pronoun.textContent = '';
+                    answerInput.style.display = 'none';
+                    submitBtn.style.display = 'none';
+                    skipBtn.style.display = 'none';
+                    feedback.textContent = 'Click Reset to start over.';
+                    feedback.className = 'feedback correct';
+                    return;
+                }
+
+                currentQuestion.isReview = false;
+            }
+
+            verbInfinitive.textContent = currentQuestion.verb;
+            tenseLabel.textContent = currentQuestion.tense_display;
+            pronoun.textContent = currentQuestion.pronoun;
+
+            answerInput.value = '';
+            answerInput.disabled = false;
+            answerInput.focus();
+            feedback.textContent = '';
+            feedback.className = 'feedback';
+            submitBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'none';
+            skipBtn.style.display = 'inline-block';
+        }
+
+        async function checkAnswer() {
+            if (!currentQuestion) return;
+
+            const userAnswer = answerInput.value.trim();
+            if (!userAnswer) {
+                feedback.textContent = 'Please enter an answer!';
+                feedback.className = 'feedback incorrect';
+                return;
+            }
+
+            const response = await fetch('/api/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    answer: userAnswer,
+                    correct: currentQuestion.correct
+                })
+            });
+
+            const result = await response.json();
+            const key = currentQuestion.key;
+            totalCount++;
+
+            if (result.correct) {
+                correctCount++;
+                feedback.innerHTML = '&#10004; Correct!';
+                feedback.className = 'feedback correct';
+
+                // If this was a review item, increment its correct count
+                const reviewItem = reviewQueue.find(q => q.key === key);
+                if (reviewItem) {
+                    reviewItem.correctCount++;
+                    if (reviewItem.correctCount >= CORRECT_TO_REMOVE) {
+                        // Remove from review queue - mastered!
+                        reviewQueue = reviewQueue.filter(q => q.key !== key);
+                    } else {
+                        // Schedule another review
+                        reviewItem.showAfter = questionCounter + REVIEW_DELAY_MIN +
+                            Math.floor(Math.random() * (REVIEW_DELAY_MAX - REVIEW_DELAY_MIN + 1));
+                    }
+                }
+
+                // Track mastery (only for non-review items, or when leaving review queue)
+                if (!currentQuestion.isReview || (reviewItem && reviewItem.correctCount >= CORRECT_TO_REMOVE)) {
+                    masteryMap[key] = (masteryMap[key] || 0) + 1;
+                    updateMasteredIndicator();
+                }
+            } else {
+                // Reset mastery on wrong answer
+                delete masteryMap[key];
+                feedback.innerHTML = `&#10008; Incorrect. The answer is: <strong>${result.expected}</strong>`;
+                feedback.className = 'feedback incorrect';
+
+                // Add to review queue
+                addToReviewQueue(currentQuestion);
+            }
+
+            updateScore();
+            updateReviewIndicator();
+            answerInput.disabled = true;
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'inline-block';
+            skipBtn.style.display = 'none';
+            nextBtn.focus();
+        }
+
+        function skip() {
+            totalCount++;
+            feedback.innerHTML = `Skipped. The answer was: <strong>${currentQuestion.correct}</strong>`;
+            feedback.className = 'feedback skipped';
+
+            // Add to review queue
+            addToReviewQueue(currentQuestion);
+
+            updateScore();
+            updateReviewIndicator();
+            answerInput.disabled = true;
+            submitBtn.style.display = 'none';
+            nextBtn.style.display = 'inline-block';
+            skipBtn.style.display = 'none';
+            nextBtn.focus();
+        }
+
+        function updateScore() {
+            correctCountEl.textContent = correctCount;
+            totalCountEl.textContent = totalCount;
+            if (totalCount > 0) {
+                const pct = Math.round((correctCount / totalCount) * 100);
+                percentageEl.textContent = `(${pct}%)`;
+            } else {
+                percentageEl.textContent = '';
+            }
+        }
+
+        // Event listeners
+        submitBtn.addEventListener('click', checkAnswer);
+        nextBtn.addEventListener('click', loadQuestion);
+        skipBtn.addEventListener('click', skip);
+
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                if (answerInput.disabled) {
+                    loadQuestion();
+                } else {
+                    checkAnswer();
+                }
+            }
+        });
+
+        // Accent button helpers
+        document.querySelectorAll('.accent-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const char = btn.dataset.char;
+                const start = answerInput.selectionStart;
+                const end = answerInput.selectionEnd;
+                const value = answerInput.value;
+                answerInput.value = value.substring(0, start) + char + value.substring(end);
+                answerInput.selectionStart = answerInput.selectionEnd = start + 1;
+                answerInput.focus();
+            });
+        });
+
+        // Reset session
+        function resetSession() {
+            correctCount = 0;
+            totalCount = 0;
+            reviewQueue = [];
+            masteryMap = {};
+            questionCounter = 0;
+            updateScore();
+            updateReviewIndicator();
+            updateMasteredIndicator();
+            // Restore UI in case session was complete
+            answerInput.style.display = '';
+            loadQuestion();
+        }
+
+        resetBtn.addEventListener('click', resetSession);
+
+        // Load first question on page load
+        loadQuestion();
+    </script>
+</body>
+</html>
