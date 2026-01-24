@@ -54,7 +54,6 @@
             <span>Score: <strong id="correct-count">0</strong> / <strong id="total-count">0</strong></span>
             <span id="percentage"></span>
             <span class="review-count" id="review-count"></span>
-            <span class="mastered-count" id="mastered-count"></span>
             <button id="reset-btn" class="btn-reset">Reset</button>
         </div>
 
@@ -130,7 +129,6 @@
         const totalCountEl = document.getElementById('total-count');
         const percentageEl = document.getElementById('percentage');
         const reviewCountEl = document.getElementById('review-count');
-        const masteredCountEl = document.getElementById('mastered-count');
         const resetBtn = document.getElementById('reset-btn');
 
         function getSelectedTenses() {
@@ -159,16 +157,6 @@
 
         function getReducedWeightKeys() {
             return Object.keys(masteryMap).filter(k => masteryMap[k] === 1);
-        }
-
-        function updateMasteredIndicator() {
-            const count = getMasteredKeys().length;
-            if (count > 0) {
-                masteredCountEl.textContent = `(${count} mastered)`;
-                masteredCountEl.style.display = 'inline';
-            } else {
-                masteredCountEl.style.display = 'none';
-            }
         }
 
         function addToReviewQueue(question) {
@@ -330,7 +318,6 @@
                 // Track mastery (only for non-review items, or when leaving review queue)
                 if (!currentQuestion.isReview || (reviewItem && reviewItem.correctCount >= CORRECT_TO_REMOVE)) {
                     masteryMap[key] = (masteryMap[key] || 0) + 1;
-                    updateMasteredIndicator();
                 }
             } else {
                 // Reset mastery on wrong answer
@@ -416,7 +403,6 @@
             questionCounter = 0;
             updateScore();
             updateReviewIndicator();
-            updateMasteredIndicator();
             // Restore UI in case session was complete
             answerInput.style.display = '';
             loadQuestion();
