@@ -47,7 +47,13 @@ def check_answer(user_answer, correct_answer):
 @app.route("/")
 def index():
     """Serve the main quiz page."""
-    return render_template("index.html", tenses=TENSES)
+    # Sort verbs by rank for the verb list
+    verb_list = sorted(
+        [(v, data["translation"], data.get("irregular", False))
+         for v, data in VERBS.items()],
+        key=lambda x: VERBS[x[0]]["rank"]
+    )
+    return render_template("index.html", tenses=TENSES, verb_list=verb_list)
 
 
 @app.route("/api/question", methods=["POST"])

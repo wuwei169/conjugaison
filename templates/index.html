@@ -96,6 +96,19 @@
                 <button class="accent-btn" data-char="œ">œ</button>
             </div>
         </div>
+
+        <details class="verb-list-section">
+            <summary>Top 100 French Verbs</summary>
+            <div class="verb-list">
+                {% for verb, translation, irregular in verb_list %}
+                <div class="verb-item{% if irregular %} irregular{% endif %}">
+                    <span class="verb-rank">{{ loop.index }}.</span>
+                    <span class="verb-name">{{ verb }}</span>
+                    <span class="verb-trans">{{ translation }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </details>
     </div>
 
     <script>
