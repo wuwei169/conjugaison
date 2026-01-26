@@ -1,5 +1,5 @@
 # French verb conjugation data
-# 100 most useful verbs for daily conversation
+# Top 100 French verbs by frequency
 
 PRONOUNS = ["je", "tu", "il/elle", "on", "nous", "vous", "ils/elles"]
 
@@ -146,31 +146,9 @@ VERBS = {
         "conditionnel": ["prendrais", "prendrais", "prendrait", "prendrait", "prendrions", "prendriez", "prendraient"],
         "subjonctif": ["prenne", "prennes", "prenne", "prenne", "prenions", "preniez", "prennent"]
     },
-    "arriver": {
-        "translation": "to arrive",
-        "rank": 12,
-        "irregular": False,
-        "présent": ["arrive", "arrives", "arrive", "arrive", "arrivons", "arrivez", "arrivent"],
-        "passé_composé": ["suis arrivé(e)", "es arrivé(e)", "est arrivé(e)", "est arrivé(e)", "sommes arrivé(e)s", "êtes arrivé(e)(s)", "sont arrivé(e)s"],
-        "imparfait": ["arrivais", "arrivais", "arrivait", "arrivait", "arrivions", "arriviez", "arrivaient"],
-        "futur_simple": ["arriverai", "arriveras", "arrivera", "arrivera", "arriverons", "arriverez", "arriveront"],
-        "conditionnel": ["arriverais", "arriverais", "arriverait", "arriverait", "arriverions", "arriveriez", "arriveraient"],
-        "subjonctif": ["arrive", "arrives", "arrive", "arrive", "arrivions", "arriviez", "arrivent"]
-    },
-    "croire": {
-        "translation": "to believe",
-        "rank": 13,
-        "irregular": True,
-        "présent": ["crois", "crois", "croit", "croit", "croyons", "croyez", "croient"],
-        "passé_composé": ["ai cru", "as cru", "a cru", "a cru", "avons cru", "avez cru", "ont cru"],
-        "imparfait": ["croyais", "croyais", "croyait", "croyait", "croyions", "croyiez", "croyaient"],
-        "futur_simple": ["croirai", "croiras", "croira", "croira", "croirons", "croirez", "croiront"],
-        "conditionnel": ["croirais", "croirais", "croirait", "croirait", "croirions", "croiriez", "croiraient"],
-        "subjonctif": ["croie", "croies", "croie", "croie", "croyions", "croyiez", "croient"]
-    },
     "mettre": {
         "translation": "to put",
-        "rank": 14,
+        "rank": 12,
         "irregular": True,
         "présent": ["mets", "mets", "met", "met", "mettons", "mettez", "mettent"],
         "passé_composé": ["ai mis", "as mis", "a mis", "a mis", "avons mis", "avez mis", "ont mis"],
@@ -181,7 +159,7 @@ VERBS = {
     },
     "passer": {
         "translation": "to pass/spend",
-        "rank": 15,
+        "rank": 13,
         "irregular": False,
         "présent": ["passe", "passes", "passe", "passe", "passons", "passez", "passent"],
         "passé_composé": ["ai passé", "as passé", "a passé", "a passé", "avons passé", "avez passé", "ont passé"],
@@ -192,7 +170,7 @@ VERBS = {
     },
     "devoir": {
         "translation": "to have to/must",
-        "rank": 16,
+        "rank": 14,
         "irregular": True,
         "présent": ["dois", "dois", "doit", "doit", "devons", "devez", "doivent"],
         "passé_composé": ["ai dû", "as dû", "a dû", "a dû", "avons dû", "avez dû", "ont dû"],
@@ -201,9 +179,20 @@ VERBS = {
         "conditionnel": ["devrais", "devrais", "devrait", "devrait", "devrions", "devriez", "devraient"],
         "subjonctif": ["doive", "doives", "doive", "doive", "devions", "deviez", "doivent"]
     },
+    "donner": {
+        "translation": "to give",
+        "rank": 15,
+        "irregular": False,
+        "présent": ["donne", "donnes", "donne", "donne", "donnons", "donnez", "donnent"],
+        "passé_composé": ["ai donné", "as donné", "a donné", "a donné", "avons donné", "avez donné", "ont donné"],
+        "imparfait": ["donnais", "donnais", "donnait", "donnait", "donnions", "donniez", "donnaient"],
+        "futur_simple": ["donnerai", "donneras", "donnera", "donnera", "donnerons", "donnerez", "donneront"],
+        "conditionnel": ["donnerais", "donnerais", "donnerait", "donnerait", "donnerions", "donneriez", "donneraient"],
+        "subjonctif": ["donne", "donnes", "donne", "donne", "donnions", "donniez", "donnent"]
+    },
     "parler": {
         "translation": "to speak",
-        "rank": 17,
+        "rank": 16,
         "irregular": False,
         "présent": ["parle", "parles", "parle", "parle", "parlons", "parlez", "parlent"],
         "passé_composé": ["ai parlé", "as parlé", "a parlé", "a parlé", "avons parlé", "avez parlé", "ont parlé"],
@@ -214,7 +203,7 @@ VERBS = {
     },
     "trouver": {
         "translation": "to find",
-        "rank": 18,
+        "rank": 17,
         "irregular": False,
         "présent": ["trouve", "trouves", "trouve", "trouve", "trouvons", "trouvez", "trouvent"],
         "passé_composé": ["ai trouvé", "as trouvé", "a trouvé", "a trouvé", "avons trouvé", "avez trouvé", "ont trouvé"],
@@ -223,16 +212,27 @@ VERBS = {
         "conditionnel": ["trouverais", "trouverais", "trouverait", "trouverait", "trouverions", "trouveriez", "trouveraient"],
         "subjonctif": ["trouve", "trouves", "trouve", "trouve", "trouvions", "trouviez", "trouvent"]
     },
-    "donner": {
-        "translation": "to give",
-        "rank": 19,
+    "arriver": {
+        "translation": "to arrive",
+        "rank": 18,
         "irregular": False,
-        "présent": ["donne", "donnes", "donne", "donne", "donnons", "donnez", "donnent"],
-        "passé_composé": ["ai donné", "as donné", "a donné", "a donné", "avons donné", "avez donné", "ont donné"],
-        "imparfait": ["donnais", "donnais", "donnait", "donnait", "donnions", "donniez", "donnaient"],
-        "futur_simple": ["donnerai", "donneras", "donnera", "donnera", "donnerons", "donnerez", "donneront"],
-        "conditionnel": ["donnerais", "donnerais", "donnerait", "donnerait", "donnerions", "donneriez", "donneraient"],
-        "subjonctif": ["donne", "donnes", "donne", "donne", "donnions", "donniez", "donnent"]
+        "présent": ["arrive", "arrives", "arrive", "arrive", "arrivons", "arrivez", "arrivent"],
+        "passé_composé": ["suis arrivé(e)", "es arrivé(e)", "est arrivé(e)", "est arrivé(e)", "sommes arrivé(e)s", "êtes arrivé(e)(s)", "sont arrivé(e)s"],
+        "imparfait": ["arrivais", "arrivais", "arrivait", "arrivait", "arrivions", "arriviez", "arrivaient"],
+        "futur_simple": ["arriverai", "arriveras", "arrivera", "arrivera", "arriverons", "arriverez", "arriveront"],
+        "conditionnel": ["arriverais", "arriverais", "arriverait", "arriverait", "arriverions", "arriveriez", "arriveraient"],
+        "subjonctif": ["arrive", "arrives", "arrive", "arrive", "arrivions", "arriviez", "arrivent"]
+    },
+    "croire": {
+        "translation": "to believe",
+        "rank": 19,
+        "irregular": True,
+        "présent": ["crois", "crois", "croit", "croit", "croyons", "croyez", "croient"],
+        "passé_composé": ["ai cru", "as cru", "a cru", "a cru", "avons cru", "avez cru", "ont cru"],
+        "imparfait": ["croyais", "croyais", "croyait", "croyait", "croyions", "croyiez", "croyaient"],
+        "futur_simple": ["croirai", "croiras", "croira", "croira", "croirons", "croirez", "croiront"],
+        "conditionnel": ["croirais", "croirais", "croirait", "croirait", "croirions", "croiriez", "croiraient"],
+        "subjonctif": ["croie", "croies", "croie", "croie", "croyions", "croyiez", "croient"]
     },
     "falloir": {
         "translation": "to be necessary",
@@ -245,16 +245,16 @@ VERBS = {
         "conditionnel": ["-", "-", "faudrait", "faudrait", "-", "-", "-"],
         "subjonctif": ["-", "-", "faille", "faille", "-", "-", "-"]
     },
-    "comprendre": {
-        "translation": "to understand",
+    "demander": {
+        "translation": "to ask",
         "rank": 21,
-        "irregular": True,
-        "présent": ["comprends", "comprends", "comprend", "comprend", "comprenons", "comprenez", "comprennent"],
-        "passé_composé": ["ai compris", "as compris", "a compris", "a compris", "avons compris", "avez compris", "ont compris"],
-        "imparfait": ["comprenais", "comprenais", "comprenait", "comprenait", "comprenions", "compreniez", "comprenaient"],
-        "futur_simple": ["comprendrai", "comprendras", "comprendra", "comprendra", "comprendrons", "comprendrez", "comprendront"],
-        "conditionnel": ["comprendrais", "comprendrais", "comprendrait", "comprendrait", "comprendrions", "comprendriez", "comprendraient"],
-        "subjonctif": ["comprenne", "comprennes", "comprenne", "comprenne", "comprenions", "compreniez", "comprennent"]
+        "irregular": False,
+        "présent": ["demande", "demandes", "demande", "demande", "demandons", "demandez", "demandent"],
+        "passé_composé": ["ai demandé", "as demandé", "a demandé", "a demandé", "avons demandé", "avez demandé", "ont demandé"],
+        "imparfait": ["demandais", "demandais", "demandait", "demandait", "demandions", "demandiez", "demandaient"],
+        "futur_simple": ["demanderai", "demanderas", "demandera", "demandera", "demanderons", "demanderez", "demanderont"],
+        "conditionnel": ["demanderais", "demanderais", "demanderait", "demanderait", "demanderions", "demanderiez", "demanderaient"],
+        "subjonctif": ["demande", "demandes", "demande", "demande", "demandions", "demandiez", "demandent"]
     },
     "connaître": {
         "translation": "to know (person/place)",
@@ -267,64 +267,20 @@ VERBS = {
         "conditionnel": ["connaîtrais", "connaîtrais", "connaîtrait", "connaîtrait", "connaîtrions", "connaîtriez", "connaîtraient"],
         "subjonctif": ["connaisse", "connaisses", "connaisse", "connaisse", "connaissions", "connaissiez", "connaissent"]
     },
-    "partir": {
-        "translation": "to leave",
+    "comprendre": {
+        "translation": "to understand",
         "rank": 23,
         "irregular": True,
-        "présent": ["pars", "pars", "part", "part", "partons", "partez", "partent"],
-        "passé_composé": ["suis parti(e)", "es parti(e)", "est parti(e)", "est parti(e)", "sommes parti(e)s", "êtes parti(e)(s)", "sont parti(e)s"],
-        "imparfait": ["partais", "partais", "partait", "partait", "partions", "partiez", "partaient"],
-        "futur_simple": ["partirai", "partiras", "partira", "partira", "partirons", "partirez", "partiront"],
-        "conditionnel": ["partirais", "partirais", "partirait", "partirait", "partirions", "partiriez", "partiraient"],
-        "subjonctif": ["parte", "partes", "parte", "parte", "partions", "partiez", "partent"]
-    },
-    "demander": {
-        "translation": "to ask",
-        "rank": 24,
-        "irregular": False,
-        "présent": ["demande", "demandes", "demande", "demande", "demandons", "demandez", "demandent"],
-        "passé_composé": ["ai demandé", "as demandé", "a demandé", "a demandé", "avons demandé", "avez demandé", "ont demandé"],
-        "imparfait": ["demandais", "demandais", "demandait", "demandait", "demandions", "demandiez", "demandaient"],
-        "futur_simple": ["demanderai", "demanderas", "demandera", "demandera", "demanderons", "demanderez", "demanderont"],
-        "conditionnel": ["demanderais", "demanderais", "demanderait", "demanderait", "demanderions", "demanderiez", "demanderaient"],
-        "subjonctif": ["demande", "demandes", "demande", "demande", "demandions", "demandiez", "demandent"]
-    },
-    "tenir": {
-        "translation": "to hold",
-        "rank": 25,
-        "irregular": True,
-        "présent": ["tiens", "tiens", "tient", "tient", "tenons", "tenez", "tiennent"],
-        "passé_composé": ["ai tenu", "as tenu", "a tenu", "a tenu", "avons tenu", "avez tenu", "ont tenu"],
-        "imparfait": ["tenais", "tenais", "tenait", "tenait", "tenions", "teniez", "tenaient"],
-        "futur_simple": ["tiendrai", "tiendras", "tiendra", "tiendra", "tiendrons", "tiendrez", "tiendront"],
-        "conditionnel": ["tiendrais", "tiendrais", "tiendrait", "tiendrait", "tiendrions", "tiendriez", "tiendraient"],
-        "subjonctif": ["tienne", "tiennes", "tienne", "tienne", "tenions", "teniez", "tiennent"]
-    },
-    "sembler": {
-        "translation": "to seem",
-        "rank": 26,
-        "irregular": False,
-        "présent": ["semble", "sembles", "semble", "semble", "semblons", "semblez", "semblent"],
-        "passé_composé": ["ai semblé", "as semblé", "a semblé", "a semblé", "avons semblé", "avez semblé", "ont semblé"],
-        "imparfait": ["semblais", "semblais", "semblait", "semblait", "semblions", "sembliez", "semblaient"],
-        "futur_simple": ["semblerai", "sembleras", "semblera", "semblera", "semblerons", "semblerez", "sembleront"],
-        "conditionnel": ["semblerais", "semblerais", "semblerait", "semblerait", "semblerions", "sembleriez", "sembleraient"],
-        "subjonctif": ["semble", "sembles", "semble", "semble", "semblions", "sembliez", "semblent"]
-    },
-    "laisser": {
-        "translation": "to leave/let",
-        "rank": 27,
-        "irregular": False,
-        "présent": ["laisse", "laisses", "laisse", "laisse", "laissons", "laissez", "laissent"],
-        "passé_composé": ["ai laissé", "as laissé", "a laissé", "a laissé", "avons laissé", "avez laissé", "ont laissé"],
-        "imparfait": ["laissais", "laissais", "laissait", "laissait", "laissions", "laissiez", "laissaient"],
-        "futur_simple": ["laisserai", "laisseras", "laissera", "laissera", "laisserons", "laisserez", "laisseront"],
-        "conditionnel": ["laisserais", "laisserais", "laisserait", "laisserait", "laisserions", "laisseriez", "laisseraient"],
-        "subjonctif": ["laisse", "laisses", "laisse", "laisse", "laissions", "laissiez", "laissent"]
+        "présent": ["comprends", "comprends", "comprend", "comprend", "comprenons", "comprenez", "comprennent"],
+        "passé_composé": ["ai compris", "as compris", "a compris", "a compris", "avons compris", "avez compris", "ont compris"],
+        "imparfait": ["comprenais", "comprenais", "comprenait", "comprenait", "comprenions", "compreniez", "comprenaient"],
+        "futur_simple": ["comprendrai", "comprendras", "comprendra", "comprendra", "comprendrons", "comprendrez", "comprendront"],
+        "conditionnel": ["comprendrais", "comprendrais", "comprendrait", "comprendrait", "comprendrions", "comprendriez", "comprendraient"],
+        "subjonctif": ["comprenne", "comprennes", "comprenne", "comprenne", "comprenions", "compreniez", "comprennent"]
     },
     "rester": {
         "translation": "to stay",
-        "rank": 28,
+        "rank": 24,
         "irregular": False,
         "présent": ["reste", "restes", "reste", "reste", "restons", "restez", "restent"],
         "passé_composé": ["suis resté(e)", "es resté(e)", "est resté(e)", "est resté(e)", "sommes resté(e)s", "êtes resté(e)(s)", "sont resté(e)s"],
@@ -335,7 +291,7 @@ VERBS = {
     },
     "penser": {
         "translation": "to think",
-        "rank": 29,
+        "rank": 25,
         "irregular": False,
         "présent": ["pense", "penses", "pense", "pense", "pensons", "pensez", "pensent"],
         "passé_composé": ["ai pensé", "as pensé", "a pensé", "a pensé", "avons pensé", "avez pensé", "ont pensé"],
@@ -344,20 +300,9 @@ VERBS = {
         "conditionnel": ["penserais", "penserais", "penserait", "penserait", "penserions", "penseriez", "penseraient"],
         "subjonctif": ["pense", "penses", "pense", "pense", "pensions", "pensiez", "pensent"]
     },
-    "entendre": {
-        "translation": "to hear",
-        "rank": 30,
-        "irregular": False,
-        "présent": ["entends", "entends", "entend", "entend", "entendons", "entendez", "entendent"],
-        "passé_composé": ["ai entendu", "as entendu", "a entendu", "a entendu", "avons entendu", "avez entendu", "ont entendu"],
-        "imparfait": ["entendais", "entendais", "entendait", "entendait", "entendions", "entendiez", "entendaient"],
-        "futur_simple": ["entendrai", "entendras", "entendra", "entendra", "entendrons", "entendrez", "entendront"],
-        "conditionnel": ["entendrais", "entendrais", "entendrait", "entendrait", "entendrions", "entendriez", "entendraient"],
-        "subjonctif": ["entende", "entendes", "entende", "entende", "entendions", "entendiez", "entendent"]
-    },
     "regarder": {
         "translation": "to watch/look at",
-        "rank": 31,
+        "rank": 26,
         "irregular": False,
         "présent": ["regarde", "regardes", "regarde", "regarde", "regardons", "regardez", "regardent"],
         "passé_composé": ["ai regardé", "as regardé", "a regardé", "a regardé", "avons regardé", "avez regardé", "ont regardé"],
@@ -366,9 +311,20 @@ VERBS = {
         "conditionnel": ["regarderais", "regarderais", "regarderait", "regarderait", "regarderions", "regarderiez", "regarderaient"],
         "subjonctif": ["regarde", "regardes", "regarde", "regarde", "regardions", "regardiez", "regardent"]
     },
+    "entendre": {
+        "translation": "to hear",
+        "rank": 27,
+        "irregular": False,
+        "présent": ["entends", "entends", "entend", "entend", "entendons", "entendez", "entendent"],
+        "passé_composé": ["ai entendu", "as entendu", "a entendu", "a entendu", "avons entendu", "avez entendu", "ont entendu"],
+        "imparfait": ["entendais", "entendais", "entendait", "entendait", "entendions", "entendiez", "entendaient"],
+        "futur_simple": ["entendrai", "entendras", "entendra", "entendra", "entendrons", "entendrez", "entendront"],
+        "conditionnel": ["entendrais", "entendrais", "entendrait", "entendrait", "entendrions", "entendriez", "entendraient"],
+        "subjonctif": ["entende", "entendes", "entende", "entende", "entendions", "entendiez", "entendent"]
+    },
     "répondre": {
         "translation": "to answer",
-        "rank": 32,
+        "rank": 28,
         "irregular": False,
         "présent": ["réponds", "réponds", "répond", "répond", "répondons", "répondez", "répondent"],
         "passé_composé": ["ai répondu", "as répondu", "a répondu", "a répondu", "avons répondu", "avez répondu", "ont répondu"],
@@ -379,7 +335,7 @@ VERBS = {
     },
     "rendre": {
         "translation": "to give back/render",
-        "rank": 33,
+        "rank": 29,
         "irregular": False,
         "présent": ["rends", "rends", "rend", "rend", "rendons", "rendez", "rendent"],
         "passé_composé": ["ai rendu", "as rendu", "a rendu", "a rendu", "avons rendu", "avez rendu", "ont rendu"],
@@ -388,31 +344,42 @@ VERBS = {
         "conditionnel": ["rendrais", "rendrais", "rendrait", "rendrait", "rendrions", "rendriez", "rendraient"],
         "subjonctif": ["rende", "rendes", "rende", "rende", "rendions", "rendiez", "rendent"]
     },
-    "sentir": {
-        "translation": "to feel/smell",
-        "rank": 34,
-        "irregular": True,
-        "présent": ["sens", "sens", "sent", "sent", "sentons", "sentez", "sentent"],
-        "passé_composé": ["ai senti", "as senti", "a senti", "a senti", "avons senti", "avez senti", "ont senti"],
-        "imparfait": ["sentais", "sentais", "sentait", "sentait", "sentions", "sentiez", "sentaient"],
-        "futur_simple": ["sentirai", "sentiras", "sentira", "sentira", "sentirons", "sentirez", "sentiront"],
-        "conditionnel": ["sentirais", "sentirais", "sentirait", "sentirait", "sentirions", "sentiriez", "sentiraient"],
-        "subjonctif": ["sente", "sentes", "sente", "sente", "sentions", "sentiez", "sentent"]
-    },
-    "attendre": {
-        "translation": "to wait",
-        "rank": 35,
+    "laisser": {
+        "translation": "to leave/let",
+        "rank": 30,
         "irregular": False,
-        "présent": ["attends", "attends", "attend", "attend", "attendons", "attendez", "attendent"],
-        "passé_composé": ["ai attendu", "as attendu", "a attendu", "a attendu", "avons attendu", "avez attendu", "ont attendu"],
-        "imparfait": ["attendais", "attendais", "attendait", "attendait", "attendions", "attendiez", "attendaient"],
-        "futur_simple": ["attendrai", "attendras", "attendra", "attendra", "attendrons", "attendrez", "attendront"],
-        "conditionnel": ["attendrais", "attendrais", "attendrait", "attendrait", "attendrions", "attendriez", "attendraient"],
-        "subjonctif": ["attende", "attendes", "attende", "attende", "attendions", "attendiez", "attendent"]
+        "présent": ["laisse", "laisses", "laisse", "laisse", "laissons", "laissez", "laissent"],
+        "passé_composé": ["ai laissé", "as laissé", "a laissé", "a laissé", "avons laissé", "avez laissé", "ont laissé"],
+        "imparfait": ["laissais", "laissais", "laissait", "laissait", "laissions", "laissiez", "laissaient"],
+        "futur_simple": ["laisserai", "laisseras", "laissera", "laissera", "laisserons", "laisserez", "laisseront"],
+        "conditionnel": ["laisserais", "laisserais", "laisserait", "laisserait", "laisserions", "laisseriez", "laisseraient"],
+        "subjonctif": ["laisse", "laisses", "laisse", "laisse", "laissions", "laissiez", "laissent"]
+    },
+    "tenir": {
+        "translation": "to hold",
+        "rank": 31,
+        "irregular": True,
+        "présent": ["tiens", "tiens", "tient", "tient", "tenons", "tenez", "tiennent"],
+        "passé_composé": ["ai tenu", "as tenu", "a tenu", "a tenu", "avons tenu", "avez tenu", "ont tenu"],
+        "imparfait": ["tenais", "tenais", "tenait", "tenait", "tenions", "teniez", "tenaient"],
+        "futur_simple": ["tiendrai", "tiendras", "tiendra", "tiendra", "tiendrons", "tiendrez", "tiendront"],
+        "conditionnel": ["tiendrais", "tiendrais", "tiendrait", "tiendrait", "tiendrions", "tiendriez", "tiendraient"],
+        "subjonctif": ["tienne", "tiennes", "tienne", "tienne", "tenions", "teniez", "tiennent"]
+    },
+    "partir": {
+        "translation": "to leave",
+        "rank": 32,
+        "irregular": True,
+        "présent": ["pars", "pars", "part", "part", "partons", "partez", "partent"],
+        "passé_composé": ["suis parti(e)", "es parti(e)", "est parti(e)", "est parti(e)", "sommes parti(e)s", "êtes parti(e)(s)", "sont parti(e)s"],
+        "imparfait": ["partais", "partais", "partait", "partait", "partions", "partiez", "partaient"],
+        "futur_simple": ["partirai", "partiras", "partira", "partira", "partirons", "partirez", "partiront"],
+        "conditionnel": ["partirais", "partirais", "partirait", "partirait", "partirions", "partiriez", "partiraient"],
+        "subjonctif": ["parte", "partes", "parte", "parte", "partions", "partiez", "partent"]
     },
     "vivre": {
         "translation": "to live",
-        "rank": 36,
+        "rank": 33,
         "irregular": True,
         "présent": ["vis", "vis", "vit", "vit", "vivons", "vivez", "vivent"],
         "passé_composé": ["ai vécu", "as vécu", "a vécu", "a vécu", "avons vécu", "avez vécu", "ont vécu"],
@@ -421,20 +388,20 @@ VERBS = {
         "conditionnel": ["vivrais", "vivrais", "vivrait", "vivrait", "vivrions", "vivriez", "vivraient"],
         "subjonctif": ["vive", "vives", "vive", "vive", "vivions", "viviez", "vivent"]
     },
-    "chercher": {
-        "translation": "to look for",
-        "rank": 37,
+    "attendre": {
+        "translation": "to wait",
+        "rank": 34,
         "irregular": False,
-        "présent": ["cherche", "cherches", "cherche", "cherche", "cherchons", "cherchez", "cherchent"],
-        "passé_composé": ["ai cherché", "as cherché", "a cherché", "a cherché", "avons cherché", "avez cherché", "ont cherché"],
-        "imparfait": ["cherchais", "cherchais", "cherchait", "cherchait", "cherchions", "cherchiez", "cherchaient"],
-        "futur_simple": ["chercherai", "chercheras", "cherchera", "cherchera", "chercherons", "chercherez", "chercheront"],
-        "conditionnel": ["chercherais", "chercherais", "chercherait", "chercherait", "chercherions", "chercheriez", "chercheraient"],
-        "subjonctif": ["cherche", "cherches", "cherche", "cherche", "cherchions", "cherchiez", "cherchent"]
+        "présent": ["attends", "attends", "attend", "attend", "attendons", "attendez", "attendent"],
+        "passé_composé": ["ai attendu", "as attendu", "a attendu", "a attendu", "avons attendu", "avez attendu", "ont attendu"],
+        "imparfait": ["attendais", "attendais", "attendait", "attendait", "attendions", "attendiez", "attendaient"],
+        "futur_simple": ["attendrai", "attendras", "attendra", "attendra", "attendrons", "attendrez", "attendront"],
+        "conditionnel": ["attendrais", "attendrais", "attendrait", "attendrait", "attendrions", "attendriez", "attendraient"],
+        "subjonctif": ["attende", "attendes", "attende", "attende", "attendions", "attendiez", "attendent"]
     },
     "sortir": {
         "translation": "to go out",
-        "rank": 38,
+        "rank": 35,
         "irregular": True,
         "présent": ["sors", "sors", "sort", "sort", "sortons", "sortez", "sortent"],
         "passé_composé": ["suis sorti(e)", "es sorti(e)", "est sorti(e)", "est sorti(e)", "sommes sorti(e)s", "êtes sorti(e)(s)", "sont sorti(e)s"],
@@ -443,20 +410,9 @@ VERBS = {
         "conditionnel": ["sortirais", "sortirais", "sortirait", "sortirait", "sortirions", "sortiriez", "sortiraient"],
         "subjonctif": ["sorte", "sortes", "sorte", "sorte", "sortions", "sortiez", "sortent"]
     },
-    "perdre": {
-        "translation": "to lose",
-        "rank": 39,
-        "irregular": False,
-        "présent": ["perds", "perds", "perd", "perd", "perdons", "perdez", "perdent"],
-        "passé_composé": ["ai perdu", "as perdu", "a perdu", "a perdu", "avons perdu", "avez perdu", "ont perdu"],
-        "imparfait": ["perdais", "perdais", "perdait", "perdait", "perdions", "perdiez", "perdaient"],
-        "futur_simple": ["perdrai", "perdras", "perdra", "perdra", "perdrons", "perdrez", "perdront"],
-        "conditionnel": ["perdrais", "perdrais", "perdrait", "perdrait", "perdrions", "perdriez", "perdraient"],
-        "subjonctif": ["perde", "perdes", "perde", "perde", "perdions", "perdiez", "perdent"]
-    },
     "revenir": {
         "translation": "to come back",
-        "rank": 40,
+        "rank": 36,
         "irregular": True,
         "présent": ["reviens", "reviens", "revient", "revient", "revenons", "revenez", "reviennent"],
         "passé_composé": ["suis revenu(e)", "es revenu(e)", "est revenu(e)", "est revenu(e)", "sommes revenu(e)s", "êtes revenu(e)(s)", "sont revenu(e)s"],
@@ -467,7 +423,7 @@ VERBS = {
     },
     "porter": {
         "translation": "to carry/wear",
-        "rank": 41,
+        "rank": 37,
         "irregular": False,
         "présent": ["porte", "portes", "porte", "porte", "portons", "portez", "portent"],
         "passé_composé": ["ai porté", "as porté", "a porté", "a porté", "avons porté", "avez porté", "ont porté"],
@@ -478,7 +434,7 @@ VERBS = {
     },
     "écrire": {
         "translation": "to write",
-        "rank": 42,
+        "rank": 38,
         "irregular": True,
         "présent": ["écris", "écris", "écrit", "écrit", "écrivons", "écrivez", "écrivent"],
         "passé_composé": ["ai écrit", "as écrit", "a écrit", "a écrit", "avons écrit", "avez écrit", "ont écrit"],
@@ -489,7 +445,7 @@ VERBS = {
     },
     "devenir": {
         "translation": "to become",
-        "rank": 43,
+        "rank": 39,
         "irregular": True,
         "présent": ["deviens", "deviens", "devient", "devient", "devenons", "devenez", "deviennent"],
         "passé_composé": ["suis devenu(e)", "es devenu(e)", "est devenu(e)", "est devenu(e)", "sommes devenu(e)s", "êtes devenu(e)(s)", "sont devenu(e)s"],
@@ -498,20 +454,9 @@ VERBS = {
         "conditionnel": ["deviendrais", "deviendrais", "deviendrait", "deviendrait", "deviendrions", "deviendriez", "deviendraient"],
         "subjonctif": ["devienne", "deviennes", "devienne", "devienne", "devenions", "deveniez", "deviennent"]
     },
-    "monter": {
-        "translation": "to go up/climb",
-        "rank": 44,
-        "irregular": False,
-        "présent": ["monte", "montes", "monte", "monte", "montons", "montez", "montent"],
-        "passé_composé": ["suis monté(e)", "es monté(e)", "est monté(e)", "est monté(e)", "sommes monté(e)s", "êtes monté(e)(s)", "sont monté(e)s"],
-        "imparfait": ["montais", "montais", "montait", "montait", "montions", "montiez", "montaient"],
-        "futur_simple": ["monterai", "monteras", "montera", "montera", "monterons", "monterez", "monteront"],
-        "conditionnel": ["monterais", "monterais", "monterait", "monterait", "monterions", "monteriez", "monteraient"],
-        "subjonctif": ["monte", "montes", "monte", "monte", "montions", "montiez", "montent"]
-    },
     "montrer": {
         "translation": "to show",
-        "rank": 45,
+        "rank": 40,
         "irregular": False,
         "présent": ["montre", "montres", "montre", "montre", "montrons", "montrez", "montrent"],
         "passé_composé": ["ai montré", "as montré", "a montré", "a montré", "avons montré", "avez montré", "ont montré"],
@@ -522,7 +467,7 @@ VERBS = {
     },
     "suivre": {
         "translation": "to follow",
-        "rank": 46,
+        "rank": 41,
         "irregular": True,
         "présent": ["suis", "suis", "suit", "suit", "suivons", "suivez", "suivent"],
         "passé_composé": ["ai suivi", "as suivi", "a suivi", "a suivi", "avons suivi", "avez suivi", "ont suivi"],
@@ -533,7 +478,7 @@ VERBS = {
     },
     "commencer": {
         "translation": "to begin",
-        "rank": 47,
+        "rank": 42,
         "irregular": False,
         "présent": ["commence", "commences", "commence", "commence", "commençons", "commencez", "commencent"],
         "passé_composé": ["ai commencé", "as commencé", "a commencé", "a commencé", "avons commencé", "avez commencé", "ont commencé"],
@@ -544,7 +489,7 @@ VERBS = {
     },
     "compter": {
         "translation": "to count",
-        "rank": 48,
+        "rank": 43,
         "irregular": False,
         "présent": ["compte", "comptes", "compte", "compte", "comptons", "comptez", "comptent"],
         "passé_composé": ["ai compté", "as compté", "a compté", "a compté", "avons compté", "avez compté", "ont compté"],
@@ -555,7 +500,7 @@ VERBS = {
     },
     "entrer": {
         "translation": "to enter",
-        "rank": 49,
+        "rank": 44,
         "irregular": False,
         "présent": ["entre", "entres", "entre", "entre", "entrons", "entrez", "entrent"],
         "passé_composé": ["suis entré(e)", "es entré(e)", "est entré(e)", "est entré(e)", "sommes entré(e)s", "êtes entré(e)(s)", "sont entré(e)s"],
@@ -564,20 +509,9 @@ VERBS = {
         "conditionnel": ["entrerais", "entrerais", "entrerait", "entrerait", "entrerions", "entreriez", "entreraient"],
         "subjonctif": ["entre", "entres", "entre", "entre", "entrions", "entriez", "entrent"]
     },
-    "mourir": {
-        "translation": "to die",
-        "rank": 50,
-        "irregular": True,
-        "présent": ["meurs", "meurs", "meurt", "meurt", "mourons", "mourez", "meurent"],
-        "passé_composé": ["suis mort(e)", "es mort(e)", "est mort(e)", "est mort(e)", "sommes mort(e)s", "êtes mort(e)(s)", "sont mort(e)s"],
-        "imparfait": ["mourais", "mourais", "mourait", "mourait", "mourions", "mouriez", "mouraient"],
-        "futur_simple": ["mourrai", "mourras", "mourra", "mourra", "mourrons", "mourrez", "mourront"],
-        "conditionnel": ["mourrais", "mourrais", "mourrait", "mourrait", "mourrions", "mourriez", "mourraient"],
-        "subjonctif": ["meure", "meures", "meure", "meure", "mourions", "mouriez", "meurent"]
-    },
     "ouvrir": {
         "translation": "to open",
-        "rank": 51,
+        "rank": 45,
         "irregular": True,
         "présent": ["ouvre", "ouvres", "ouvre", "ouvre", "ouvrons", "ouvrez", "ouvrent"],
         "passé_composé": ["ai ouvert", "as ouvert", "a ouvert", "a ouvert", "avons ouvert", "avez ouvert", "ont ouvert"],
@@ -588,7 +522,7 @@ VERBS = {
     },
     "lire": {
         "translation": "to read",
-        "rank": 52,
+        "rank": 46,
         "irregular": True,
         "présent": ["lis", "lis", "lit", "lit", "lisons", "lisez", "lisent"],
         "passé_composé": ["ai lu", "as lu", "a lu", "a lu", "avons lu", "avez lu", "ont lu"],
@@ -599,7 +533,7 @@ VERBS = {
     },
     "arrêter": {
         "translation": "to stop",
-        "rank": 53,
+        "rank": 47,
         "irregular": False,
         "présent": ["arrête", "arrêtes", "arrête", "arrête", "arrêtons", "arrêtez", "arrêtent"],
         "passé_composé": ["ai arrêté", "as arrêté", "a arrêté", "a arrêté", "avons arrêté", "avez arrêté", "ont arrêté"],
@@ -610,7 +544,7 @@ VERBS = {
     },
     "servir": {
         "translation": "to serve",
-        "rank": 54,
+        "rank": 48,
         "irregular": True,
         "présent": ["sers", "sers", "sert", "sert", "servons", "servez", "servent"],
         "passé_composé": ["ai servi", "as servi", "a servi", "a servi", "avons servi", "avez servi", "ont servi"],
@@ -619,20 +553,9 @@ VERBS = {
         "conditionnel": ["servirais", "servirais", "servirait", "servirait", "servirions", "serviriez", "serviraient"],
         "subjonctif": ["serve", "serves", "serve", "serve", "servions", "serviez", "servent"]
     },
-    "jeter": {
-        "translation": "to throw",
-        "rank": 55,
-        "irregular": False,
-        "présent": ["jette", "jettes", "jette", "jette", "jetons", "jetez", "jettent"],
-        "passé_composé": ["ai jeté", "as jeté", "a jeté", "a jeté", "avons jeté", "avez jeté", "ont jeté"],
-        "imparfait": ["jetais", "jetais", "jetait", "jetait", "jetions", "jetiez", "jetaient"],
-        "futur_simple": ["jetterai", "jetteras", "jettera", "jettera", "jetterons", "jetterez", "jetteront"],
-        "conditionnel": ["jetterais", "jetterais", "jetterait", "jetterait", "jetterions", "jetteriez", "jetteraient"],
-        "subjonctif": ["jette", "jettes", "jette", "jette", "jetions", "jetiez", "jettent"]
-    },
     "recevoir": {
         "translation": "to receive",
-        "rank": 56,
+        "rank": 49,
         "irregular": True,
         "présent": ["reçois", "reçois", "reçoit", "reçoit", "recevons", "recevez", "reçoivent"],
         "passé_composé": ["ai reçu", "as reçu", "a reçu", "a reçu", "avons reçu", "avez reçu", "ont reçu"],
@@ -643,7 +566,7 @@ VERBS = {
     },
     "finir": {
         "translation": "to finish",
-        "rank": 57,
+        "rank": 50,
         "irregular": False,
         "présent": ["finis", "finis", "finit", "finit", "finissons", "finissez", "finissent"],
         "passé_composé": ["ai fini", "as fini", "a fini", "a fini", "avons fini", "avez fini", "ont fini"],
@@ -654,7 +577,7 @@ VERBS = {
     },
     "appeler": {
         "translation": "to call",
-        "rank": 58,
+        "rank": 51,
         "irregular": False,
         "présent": ["appelle", "appelles", "appelle", "appelle", "appelons", "appelez", "appellent"],
         "passé_composé": ["ai appelé", "as appelé", "a appelé", "a appelé", "avons appelé", "avez appelé", "ont appelé"],
@@ -663,42 +586,9 @@ VERBS = {
         "conditionnel": ["appellerais", "appellerais", "appellerait", "appellerait", "appellerions", "appelleriez", "appelleraient"],
         "subjonctif": ["appelle", "appelles", "appelle", "appelle", "appelions", "appeliez", "appellent"]
     },
-    "permettre": {
-        "translation": "to allow",
-        "rank": 59,
-        "irregular": True,
-        "présent": ["permets", "permets", "permet", "permet", "permettons", "permettez", "permettent"],
-        "passé_composé": ["ai permis", "as permis", "a permis", "a permis", "avons permis", "avez permis", "ont permis"],
-        "imparfait": ["permettais", "permettais", "permettait", "permettait", "permettions", "permettiez", "permettaient"],
-        "futur_simple": ["permettrai", "permettras", "permettra", "permettra", "permettrons", "permettrez", "permettront"],
-        "conditionnel": ["permettrais", "permettrais", "permettrait", "permettrait", "permettrions", "permettriez", "permettraient"],
-        "subjonctif": ["permette", "permettes", "permette", "permette", "permettions", "permettiez", "permettent"]
-    },
-    "s'asseoir": {
-        "translation": "to sit down",
-        "rank": 60,
-        "irregular": True,
-        "présent": ["m'assieds", "t'assieds", "s'assied", "s'assied", "nous asseyons", "vous asseyez", "s'asseyent"],
-        "passé_composé": ["me suis assis(e)", "t'es assis(e)", "s'est assis(e)", "s'est assis(e)", "nous sommes assis(es)", "vous êtes assis(es)", "se sont assis(es)"],
-        "imparfait": ["m'asseyais", "t'asseyais", "s'asseyait", "s'asseyait", "nous asseyions", "vous asseyiez", "s'asseyaient"],
-        "futur_simple": ["m'assiérai", "t'assiéras", "s'assiéra", "s'assiéra", "nous assiérons", "vous assiérez", "s'assiéront"],
-        "conditionnel": ["m'assiérais", "t'assiérais", "s'assiérait", "s'assiérait", "nous assiérions", "vous assiériez", "s'assiéraient"],
-        "subjonctif": ["m'asseye", "t'asseyes", "s'asseye", "s'asseye", "nous asseyions", "vous asseyiez", "s'asseyent"]
-    },
-    "marcher": {
-        "translation": "to walk",
-        "rank": 61,
-        "irregular": False,
-        "présent": ["marche", "marches", "marche", "marche", "marchons", "marchez", "marchent"],
-        "passé_composé": ["ai marché", "as marché", "a marché", "a marché", "avons marché", "avez marché", "ont marché"],
-        "imparfait": ["marchais", "marchais", "marchait", "marchait", "marchions", "marchiez", "marchaient"],
-        "futur_simple": ["marcherai", "marcheras", "marchera", "marchera", "marcherons", "marcherez", "marcheront"],
-        "conditionnel": ["marcherais", "marcherais", "marcherait", "marcherait", "marcherions", "marcheriez", "marcheraient"],
-        "subjonctif": ["marche", "marches", "marche", "marche", "marchions", "marchiez", "marchent"]
-    },
     "rappeler": {
         "translation": "to recall/call back",
-        "rank": 62,
+        "rank": 52,
         "irregular": False,
         "présent": ["rappelle", "rappelles", "rappelle", "rappelle", "rappelons", "rappelez", "rappellent"],
         "passé_composé": ["ai rappelé", "as rappelé", "a rappelé", "a rappelé", "avons rappelé", "avez rappelé", "ont rappelé"],
@@ -707,9 +597,20 @@ VERBS = {
         "conditionnel": ["rappellerais", "rappellerais", "rappellerait", "rappellerait", "rappellerions", "rappelleriez", "rappelleraient"],
         "subjonctif": ["rappelle", "rappelles", "rappelle", "rappelle", "rappelions", "rappeliez", "rappellent"]
     },
+    "marcher": {
+        "translation": "to walk",
+        "rank": 53,
+        "irregular": False,
+        "présent": ["marche", "marches", "marche", "marche", "marchons", "marchez", "marchent"],
+        "passé_composé": ["ai marché", "as marché", "a marché", "a marché", "avons marché", "avez marché", "ont marché"],
+        "imparfait": ["marchais", "marchais", "marchait", "marchait", "marchions", "marchiez", "marchaient"],
+        "futur_simple": ["marcherai", "marcheras", "marchera", "marchera", "marcherons", "marcherez", "marcheront"],
+        "conditionnel": ["marcherais", "marcherais", "marcherait", "marcherait", "marcherions", "marcheriez", "marcheraient"],
+        "subjonctif": ["marche", "marches", "marche", "marche", "marchions", "marchiez", "marchent"]
+    },
     "accepter": {
         "translation": "to accept",
-        "rank": 63,
+        "rank": 54,
         "irregular": False,
         "présent": ["accepte", "acceptes", "accepte", "accepte", "acceptons", "acceptez", "acceptent"],
         "passé_composé": ["ai accepté", "as accepté", "a accepté", "a accepté", "avons accepté", "avez accepté", "ont accepté"],
@@ -720,7 +621,7 @@ VERBS = {
     },
     "aimer": {
         "translation": "to love/like",
-        "rank": 64,
+        "rank": 55,
         "irregular": False,
         "présent": ["aime", "aimes", "aime", "aime", "aimons", "aimez", "aiment"],
         "passé_composé": ["ai aimé", "as aimé", "a aimé", "a aimé", "avons aimé", "avez aimé", "ont aimé"],
@@ -731,7 +632,7 @@ VERBS = {
     },
     "ajouter": {
         "translation": "to add",
-        "rank": 65,
+        "rank": 56,
         "irregular": False,
         "présent": ["ajoute", "ajoutes", "ajoute", "ajoute", "ajoutons", "ajoutez", "ajoutent"],
         "passé_composé": ["ai ajouté", "as ajouté", "a ajouté", "a ajouté", "avons ajouté", "avez ajouté", "ont ajouté"],
@@ -742,7 +643,7 @@ VERBS = {
     },
     "apporter": {
         "translation": "to bring",
-        "rank": 66,
+        "rank": 57,
         "irregular": False,
         "présent": ["apporte", "apportes", "apporte", "apporte", "apportons", "apportez", "apportent"],
         "passé_composé": ["ai apporté", "as apporté", "a apporté", "a apporté", "avons apporté", "avez apporté", "ont apporté"],
@@ -753,7 +654,7 @@ VERBS = {
     },
     "apprendre": {
         "translation": "to learn",
-        "rank": 67,
+        "rank": 58,
         "irregular": True,
         "présent": ["apprends", "apprends", "apprend", "apprend", "apprenons", "apprenez", "apprennent"],
         "passé_composé": ["ai appris", "as appris", "a appris", "a appris", "avons appris", "avez appris", "ont appris"],
@@ -764,7 +665,7 @@ VERBS = {
     },
     "changer": {
         "translation": "to change",
-        "rank": 68,
+        "rank": 59,
         "irregular": False,
         "présent": ["change", "changes", "change", "change", "changeons", "changez", "changent"],
         "passé_composé": ["ai changé", "as changé", "a changé", "a changé", "avons changé", "avez changé", "ont changé"],
@@ -775,7 +676,7 @@ VERBS = {
     },
     "choisir": {
         "translation": "to choose",
-        "rank": 69,
+        "rank": 60,
         "irregular": False,
         "présent": ["choisis", "choisis", "choisit", "choisit", "choisissons", "choisissez", "choisissent"],
         "passé_composé": ["ai choisi", "as choisi", "a choisi", "a choisi", "avons choisi", "avez choisi", "ont choisi"],
@@ -786,7 +687,7 @@ VERBS = {
     },
     "continuer": {
         "translation": "to continue",
-        "rank": 70,
+        "rank": 61,
         "irregular": False,
         "présent": ["continue", "continues", "continue", "continue", "continuons", "continuez", "continuent"],
         "passé_composé": ["ai continué", "as continué", "a continué", "a continué", "avons continué", "avez continué", "ont continué"],
@@ -797,7 +698,7 @@ VERBS = {
     },
     "courir": {
         "translation": "to run",
-        "rank": 71,
+        "rank": 62,
         "irregular": True,
         "présent": ["cours", "cours", "court", "court", "courons", "courez", "courent"],
         "passé_composé": ["ai couru", "as couru", "a couru", "a couru", "avons couru", "avez couru", "ont couru"],
@@ -808,7 +709,7 @@ VERBS = {
     },
     "décider": {
         "translation": "to decide",
-        "rank": 72,
+        "rank": 63,
         "irregular": False,
         "présent": ["décide", "décides", "décide", "décide", "décidons", "décidez", "décident"],
         "passé_composé": ["ai décidé", "as décidé", "a décidé", "a décidé", "avons décidé", "avez décidé", "ont décidé"],
@@ -819,7 +720,7 @@ VERBS = {
     },
     "découvrir": {
         "translation": "to discover",
-        "rank": 73,
+        "rank": 64,
         "irregular": True,
         "présent": ["découvre", "découvres", "découvre", "découvre", "découvrons", "découvrez", "découvrent"],
         "passé_composé": ["ai découvert", "as découvert", "a découvert", "a découvert", "avons découvert", "avez découvert", "ont découvert"],
@@ -830,7 +731,7 @@ VERBS = {
     },
     "descendre": {
         "translation": "to go down",
-        "rank": 74,
+        "rank": 65,
         "irregular": False,
         "présent": ["descends", "descends", "descend", "descend", "descendons", "descendez", "descendent"],
         "passé_composé": ["suis descendu(e)", "es descendu(e)", "est descendu(e)", "est descendu(e)", "sommes descendu(e)s", "êtes descendu(e)(s)", "sont descendu(e)s"],
@@ -841,7 +742,7 @@ VERBS = {
     },
     "dormir": {
         "translation": "to sleep",
-        "rank": 75,
+        "rank": 66,
         "irregular": True,
         "présent": ["dors", "dors", "dort", "dort", "dormons", "dormez", "dorment"],
         "passé_composé": ["ai dormi", "as dormi", "a dormi", "a dormi", "avons dormi", "avez dormi", "ont dormi"],
@@ -852,7 +753,7 @@ VERBS = {
     },
     "écouter": {
         "translation": "to listen",
-        "rank": 76,
+        "rank": 67,
         "irregular": False,
         "présent": ["écoute", "écoutes", "écoute", "écoute", "écoutons", "écoutez", "écoutent"],
         "passé_composé": ["ai écouté", "as écouté", "a écouté", "a écouté", "avons écouté", "avez écouté", "ont écouté"],
@@ -863,7 +764,7 @@ VERBS = {
     },
     "empêcher": {
         "translation": "to prevent",
-        "rank": 77,
+        "rank": 68,
         "irregular": False,
         "présent": ["empêche", "empêches", "empêche", "empêche", "empêchons", "empêchez", "empêchent"],
         "passé_composé": ["ai empêché", "as empêché", "a empêché", "a empêché", "avons empêché", "avez empêché", "ont empêché"],
@@ -874,7 +775,7 @@ VERBS = {
     },
     "enlever": {
         "translation": "to remove",
-        "rank": 78,
+        "rank": 69,
         "irregular": False,
         "présent": ["enlève", "enlèves", "enlève", "enlève", "enlevons", "enlevez", "enlèvent"],
         "passé_composé": ["ai enlevé", "as enlevé", "a enlevé", "a enlevé", "avons enlevé", "avez enlevé", "ont enlevé"],
@@ -885,7 +786,7 @@ VERBS = {
     },
     "espérer": {
         "translation": "to hope",
-        "rank": 79,
+        "rank": 70,
         "irregular": False,
         "présent": ["espère", "espères", "espère", "espère", "espérons", "espérez", "espèrent"],
         "passé_composé": ["ai espéré", "as espéré", "a espéré", "a espéré", "avons espéré", "avez espéré", "ont espéré"],
@@ -896,7 +797,7 @@ VERBS = {
     },
     "essayer": {
         "translation": "to try",
-        "rank": 80,
+        "rank": 71,
         "irregular": False,
         "présent": ["essaie", "essaies", "essaie", "essaie", "essayons", "essayez", "essaient"],
         "passé_composé": ["ai essayé", "as essayé", "a essayé", "a essayé", "avons essayé", "avez essayé", "ont essayé"],
@@ -907,7 +808,7 @@ VERBS = {
     },
     "expliquer": {
         "translation": "to explain",
-        "rank": 81,
+        "rank": 72,
         "irregular": False,
         "présent": ["explique", "expliques", "explique", "explique", "expliquons", "expliquez", "expliquent"],
         "passé_composé": ["ai expliqué", "as expliqué", "a expliqué", "a expliqué", "avons expliqué", "avez expliqué", "ont expliqué"],
@@ -918,7 +819,7 @@ VERBS = {
     },
     "gagner": {
         "translation": "to win/earn",
-        "rank": 82,
+        "rank": 73,
         "irregular": False,
         "présent": ["gagne", "gagnes", "gagne", "gagne", "gagnons", "gagnez", "gagnent"],
         "passé_composé": ["ai gagné", "as gagné", "a gagné", "a gagné", "avons gagné", "avez gagné", "ont gagné"],
@@ -929,7 +830,7 @@ VERBS = {
     },
     "garder": {
         "translation": "to keep",
-        "rank": 83,
+        "rank": 74,
         "irregular": False,
         "présent": ["garde", "gardes", "garde", "garde", "gardons", "gardez", "gardent"],
         "passé_composé": ["ai gardé", "as gardé", "a gardé", "a gardé", "avons gardé", "avez gardé", "ont gardé"],
@@ -940,7 +841,7 @@ VERBS = {
     },
     "jouer": {
         "translation": "to play",
-        "rank": 84,
+        "rank": 75,
         "irregular": False,
         "présent": ["joue", "joues", "joue", "joue", "jouons", "jouez", "jouent"],
         "passé_composé": ["ai joué", "as joué", "a joué", "a joué", "avons joué", "avez joué", "ont joué"],
@@ -951,7 +852,7 @@ VERBS = {
     },
     "manger": {
         "translation": "to eat",
-        "rank": 85,
+        "rank": 76,
         "irregular": False,
         "présent": ["mange", "manges", "mange", "mange", "mangeons", "mangez", "mangent"],
         "passé_composé": ["ai mangé", "as mangé", "a mangé", "a mangé", "avons mangé", "avez mangé", "ont mangé"],
@@ -962,7 +863,7 @@ VERBS = {
     },
     "oublier": {
         "translation": "to forget",
-        "rank": 86,
+        "rank": 77,
         "irregular": False,
         "présent": ["oublie", "oublies", "oublie", "oublie", "oublions", "oubliez", "oublient"],
         "passé_composé": ["ai oublié", "as oublié", "a oublié", "a oublié", "avons oublié", "avez oublié", "ont oublié"],
@@ -973,7 +874,7 @@ VERBS = {
     },
     "partager": {
         "translation": "to share",
-        "rank": 87,
+        "rank": 78,
         "irregular": False,
         "présent": ["partage", "partages", "partage", "partage", "partageons", "partagez", "partagent"],
         "passé_composé": ["ai partagé", "as partagé", "a partagé", "a partagé", "avons partagé", "avez partagé", "ont partagé"],
@@ -984,7 +885,7 @@ VERBS = {
     },
     "payer": {
         "translation": "to pay",
-        "rank": 88,
+        "rank": 79,
         "irregular": False,
         "présent": ["paie", "paies", "paie", "paie", "payons", "payez", "paient"],
         "passé_composé": ["ai payé", "as payé", "a payé", "a payé", "avons payé", "avez payé", "ont payé"],
@@ -995,7 +896,7 @@ VERBS = {
     },
     "travailler": {
         "translation": "to work",
-        "rank": 89,
+        "rank": 80,
         "irregular": False,
         "présent": ["travaille", "travailles", "travaille", "travaille", "travaillons", "travaillez", "travaillent"],
         "passé_composé": ["ai travaillé", "as travaillé", "a travaillé", "a travaillé", "avons travaillé", "avez travaillé", "ont travaillé"],
@@ -1006,7 +907,7 @@ VERBS = {
     },
     "tomber": {
         "translation": "to fall",
-        "rank": 90,
+        "rank": 81,
         "irregular": False,
         "présent": ["tombe", "tombes", "tombe", "tombe", "tombons", "tombez", "tombent"],
         "passé_composé": ["suis tombé(e)", "es tombé(e)", "est tombé(e)", "est tombé(e)", "sommes tombé(e)s", "êtes tombé(e)(s)", "sont tombé(e)s"],
@@ -1017,7 +918,7 @@ VERBS = {
     },
     "rentrer": {
         "translation": "to return home",
-        "rank": 91,
+        "rank": 82,
         "irregular": False,
         "présent": ["rentre", "rentres", "rentre", "rentre", "rentrons", "rentrez", "rentrent"],
         "passé_composé": ["suis rentré(e)", "es rentré(e)", "est rentré(e)", "est rentré(e)", "sommes rentré(e)s", "êtes rentré(e)(s)", "sont rentré(e)s"],
@@ -1028,7 +929,7 @@ VERBS = {
     },
     "manquer": {
         "translation": "to miss",
-        "rank": 92,
+        "rank": 83,
         "irregular": False,
         "présent": ["manque", "manques", "manque", "manque", "manquons", "manquez", "manquent"],
         "passé_composé": ["ai manqué", "as manqué", "a manqué", "a manqué", "avons manqué", "avez manqué", "ont manqué"],
@@ -1039,7 +940,7 @@ VERBS = {
     },
     "poser": {
         "translation": "to put/ask",
-        "rank": 93,
+        "rank": 84,
         "irregular": False,
         "présent": ["pose", "poses", "pose", "pose", "posons", "posez", "posent"],
         "passé_composé": ["ai posé", "as posé", "a posé", "a posé", "avons posé", "avez posé", "ont posé"],
@@ -1048,9 +949,20 @@ VERBS = {
         "conditionnel": ["poserais", "poserais", "poserait", "poserait", "poserions", "poseriez", "poseraient"],
         "subjonctif": ["pose", "poses", "pose", "pose", "posions", "posiez", "posent"]
     },
+    "se passer": {
+        "translation": "to happen",
+        "rank": 85,
+        "irregular": False,
+        "présent": ["me passe", "te passes", "se passe", "se passe", "nous passons", "vous passez", "se passent"],
+        "passé_composé": ["me suis passé(e)", "t'es passé(e)", "s'est passé(e)", "s'est passé(e)", "nous sommes passé(e)s", "vous êtes passé(e)(s)", "se sont passé(e)s"],
+        "imparfait": ["me passais", "te passais", "se passait", "se passait", "nous passions", "vous passiez", "se passaient"],
+        "futur_simple": ["me passerai", "te passeras", "se passera", "se passera", "nous passerons", "vous passerez", "se passeront"],
+        "conditionnel": ["me passerais", "te passerais", "se passerait", "se passerait", "nous passerions", "vous passeriez", "se passeraient"],
+        "subjonctif": ["me passe", "te passes", "se passe", "se passe", "nous passions", "vous passiez", "se passent"]
+    },
     "se souvenir": {
         "translation": "to remember",
-        "rank": 94,
+        "rank": 86,
         "irregular": True,
         "présent": ["me souviens", "te souviens", "se souvient", "se souvient", "nous souvenons", "vous souvenez", "se souviennent"],
         "passé_composé": ["me suis souvenu(e)", "t'es souvenu(e)", "s'est souvenu(e)", "s'est souvenu(e)", "nous sommes souvenu(e)s", "vous êtes souvenu(e)(s)", "se sont souvenu(e)s"],
@@ -1061,7 +973,7 @@ VERBS = {
     },
     "fermer": {
         "translation": "to close",
-        "rank": 95,
+        "rank": 87,
         "irregular": False,
         "présent": ["ferme", "fermes", "ferme", "ferme", "fermons", "fermez", "ferment"],
         "passé_composé": ["ai fermé", "as fermé", "a fermé", "a fermé", "avons fermé", "avez fermé", "ont fermé"],
@@ -1072,7 +984,7 @@ VERBS = {
     },
     "réussir": {
         "translation": "to succeed",
-        "rank": 96,
+        "rank": 88,
         "irregular": False,
         "présent": ["réussis", "réussis", "réussit", "réussit", "réussissons", "réussissez", "réussissent"],
         "passé_composé": ["ai réussi", "as réussi", "a réussi", "a réussi", "avons réussi", "avez réussi", "ont réussi"],
@@ -1083,7 +995,7 @@ VERBS = {
     },
     "utiliser": {
         "translation": "to use",
-        "rank": 97,
+        "rank": 89,
         "irregular": False,
         "présent": ["utilise", "utilises", "utilise", "utilise", "utilisons", "utilisez", "utilisent"],
         "passé_composé": ["ai utilisé", "as utilisé", "a utilisé", "a utilisé", "avons utilisé", "avez utilisé", "ont utilisé"],
@@ -1094,7 +1006,7 @@ VERBS = {
     },
     "couper": {
         "translation": "to cut",
-        "rank": 98,
+        "rank": 90,
         "irregular": False,
         "présent": ["coupe", "coupes", "coupe", "coupe", "coupons", "coupez", "coupent"],
         "passé_composé": ["ai coupé", "as coupé", "a coupé", "a coupé", "avons coupé", "avez coupé", "ont coupé"],
@@ -1105,7 +1017,7 @@ VERBS = {
     },
     "rencontrer": {
         "translation": "to meet",
-        "rank": 99,
+        "rank": 91,
         "irregular": False,
         "présent": ["rencontre", "rencontres", "rencontre", "rencontre", "rencontrons", "rencontrez", "rencontrent"],
         "passé_composé": ["ai rencontré", "as rencontré", "a rencontré", "a rencontré", "avons rencontré", "avez rencontré", "ont rencontré"],
@@ -1113,5 +1025,104 @@ VERBS = {
         "futur_simple": ["rencontrerai", "rencontreras", "rencontrera", "rencontrera", "rencontrerons", "rencontrerez", "rencontreront"],
         "conditionnel": ["rencontrerais", "rencontrerais", "rencontrerait", "rencontrerait", "rencontrerions", "rencontreriez", "rencontreraient"],
         "subjonctif": ["rencontre", "rencontres", "rencontre", "rencontre", "rencontrions", "rencontriez", "rencontrent"]
+    },
+    "boire": {
+        "translation": "to drink",
+        "rank": 92,
+        "irregular": True,
+        "présent": ["bois", "bois", "boit", "boit", "buvons", "buvez", "boivent"],
+        "passé_composé": ["ai bu", "as bu", "a bu", "a bu", "avons bu", "avez bu", "ont bu"],
+        "imparfait": ["buvais", "buvais", "buvait", "buvait", "buvions", "buviez", "buvaient"],
+        "futur_simple": ["boirai", "boiras", "boira", "boira", "boirons", "boirez", "boiront"],
+        "conditionnel": ["boirais", "boirais", "boirait", "boirait", "boirions", "boiriez", "boiraient"],
+        "subjonctif": ["boive", "boives", "boive", "boive", "buvions", "buviez", "boivent"]
+    },
+    "acheter": {
+        "translation": "to buy",
+        "rank": 93,
+        "irregular": False,
+        "présent": ["achète", "achètes", "achète", "achète", "achetons", "achetez", "achètent"],
+        "passé_composé": ["ai acheté", "as acheté", "a acheté", "a acheté", "avons acheté", "avez acheté", "ont acheté"],
+        "imparfait": ["achetais", "achetais", "achetait", "achetait", "achetions", "achetiez", "achetaient"],
+        "futur_simple": ["achèterai", "achèteras", "achètera", "achètera", "achèterons", "achèterez", "achèteront"],
+        "conditionnel": ["achèterais", "achèterais", "achèterait", "achèterait", "achèterions", "achèteriez", "achèteraient"],
+        "subjonctif": ["achète", "achètes", "achète", "achète", "achetions", "achetiez", "achètent"]
+    },
+    "conduire": {
+        "translation": "to drive",
+        "rank": 94,
+        "irregular": True,
+        "présent": ["conduis", "conduis", "conduit", "conduit", "conduisons", "conduisez", "conduisent"],
+        "passé_composé": ["ai conduit", "as conduit", "a conduit", "a conduit", "avons conduit", "avez conduit", "ont conduit"],
+        "imparfait": ["conduisais", "conduisais", "conduisait", "conduisait", "conduisions", "conduisiez", "conduisaient"],
+        "futur_simple": ["conduirai", "conduiras", "conduira", "conduira", "conduirons", "conduirez", "conduiront"],
+        "conditionnel": ["conduirais", "conduirais", "conduirait", "conduirait", "conduirions", "conduiriez", "conduiraient"],
+        "subjonctif": ["conduise", "conduises", "conduise", "conduise", "conduisions", "conduisiez", "conduisent"]
+    },
+    "inviter": {
+        "translation": "to invite",
+        "rank": 95,
+        "irregular": False,
+        "présent": ["invite", "invites", "invite", "invite", "invitons", "invitez", "invitent"],
+        "passé_composé": ["ai invité", "as invité", "a invité", "a invité", "avons invité", "avez invité", "ont invité"],
+        "imparfait": ["invitais", "invitais", "invitait", "invitait", "invitions", "invitiez", "invitaient"],
+        "futur_simple": ["inviterai", "inviteras", "invitera", "invitera", "inviterons", "inviterez", "inviteront"],
+        "conditionnel": ["inviterais", "inviterais", "inviterait", "inviterait", "inviterions", "inviteriez", "inviteraient"],
+        "subjonctif": ["invite", "invites", "invite", "invite", "invitions", "invitiez", "invitent"]
+    },
+    "préparer": {
+        "translation": "to prepare",
+        "rank": 96,
+        "irregular": False,
+        "présent": ["prépare", "prépares", "prépare", "prépare", "préparons", "préparez", "préparent"],
+        "passé_composé": ["ai préparé", "as préparé", "a préparé", "a préparé", "avons préparé", "avez préparé", "ont préparé"],
+        "imparfait": ["préparais", "préparais", "préparait", "préparait", "préparions", "prépariez", "préparaient"],
+        "futur_simple": ["préparerai", "prépareras", "préparera", "préparera", "préparerons", "préparerez", "prépareront"],
+        "conditionnel": ["préparerais", "préparerais", "préparerait", "préparerait", "préparerions", "prépareriez", "prépareraient"],
+        "subjonctif": ["prépare", "prépares", "prépare", "prépare", "préparions", "prépariez", "préparent"]
+    },
+    "envoyer": {
+        "translation": "to send",
+        "rank": 97,
+        "irregular": True,
+        "présent": ["envoie", "envoies", "envoie", "envoie", "envoyons", "envoyez", "envoient"],
+        "passé_composé": ["ai envoyé", "as envoyé", "a envoyé", "a envoyé", "avons envoyé", "avez envoyé", "ont envoyé"],
+        "imparfait": ["envoyais", "envoyais", "envoyait", "envoyait", "envoyions", "envoyiez", "envoyaient"],
+        "futur_simple": ["enverrai", "enverras", "enverra", "enverra", "enverrons", "enverrez", "enverront"],
+        "conditionnel": ["enverrais", "enverrais", "enverrait", "enverrait", "enverrions", "enverriez", "enverraient"],
+        "subjonctif": ["envoie", "envoies", "envoie", "envoie", "envoyions", "envoyiez", "envoient"]
+    },
+    "chercher": {
+        "translation": "to look for",
+        "rank": 98,
+        "irregular": False,
+        "présent": ["cherche", "cherches", "cherche", "cherche", "cherchons", "cherchez", "cherchent"],
+        "passé_composé": ["ai cherché", "as cherché", "a cherché", "a cherché", "avons cherché", "avez cherché", "ont cherché"],
+        "imparfait": ["cherchais", "cherchais", "cherchait", "cherchait", "cherchions", "cherchiez", "cherchaient"],
+        "futur_simple": ["chercherai", "chercheras", "cherchera", "cherchera", "chercherons", "chercherez", "chercheront"],
+        "conditionnel": ["chercherais", "chercherais", "chercherait", "chercherait", "chercherions", "chercheriez", "chercheraient"],
+        "subjonctif": ["cherche", "cherches", "cherche", "cherche", "cherchions", "cherchiez", "cherchent"]
+    },
+    "sentir": {
+        "translation": "to feel/smell",
+        "rank": 99,
+        "irregular": True,
+        "présent": ["sens", "sens", "sent", "sent", "sentons", "sentez", "sentent"],
+        "passé_composé": ["ai senti", "as senti", "a senti", "a senti", "avons senti", "avez senti", "ont senti"],
+        "imparfait": ["sentais", "sentais", "sentait", "sentait", "sentions", "sentiez", "sentaient"],
+        "futur_simple": ["sentirai", "sentiras", "sentira", "sentira", "sentirons", "sentirez", "sentiront"],
+        "conditionnel": ["sentirais", "sentirais", "sentirait", "sentirait", "sentirions", "sentiriez", "sentiraient"],
+        "subjonctif": ["sente", "sentes", "sente", "sente", "sentions", "sentiez", "sentent"]
+    },
+    "tourner": {
+        "translation": "to turn",
+        "rank": 100,
+        "irregular": False,
+        "présent": ["tourne", "tournes", "tourne", "tourne", "tournons", "tournez", "tournent"],
+        "passé_composé": ["ai tourné", "as tourné", "a tourné", "a tourné", "avons tourné", "avez tourné", "ont tourné"],
+        "imparfait": ["tournais", "tournais", "tournait", "tournait", "tournions", "tourniez", "tournaient"],
+        "futur_simple": ["tournerai", "tourneras", "tournera", "tournera", "tournerons", "tournerez", "tourneront"],
+        "conditionnel": ["tournerais", "tournerais", "tournerait", "tournerait", "tournerions", "tourneriez", "tourneraient"],
+        "subjonctif": ["tourne", "tournes", "tourne", "tourne", "tournions", "tourniez", "tournent"]
     }
 }
