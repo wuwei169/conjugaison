@@ -49,8 +49,7 @@ def index():
     """Serve the main quiz page."""
     # Sort verbs by rank for the verb list
     verb_list = sorted(
-        [(v, data["translation"], data.get("irregular", False))
-         for v, data in VERBS.items()],
+        [(v, data.get("irregular", False)) for v, data in VERBS.items()],
         key=lambda x: VERBS[x[0]]["rank"]
     )
     return render_template("index.html", tenses=TENSES, verb_list=verb_list)

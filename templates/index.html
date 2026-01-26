@@ -99,12 +99,12 @@
 
         <details class="verb-list-section">
             <summary>Top 100 French Verbs</summary>
+            <p class="verb-list-legend"><span class="irregular">Irregular verbs</span> are highlighted in blue</p>
             <div class="verb-list">
-                {% for verb, translation, irregular in verb_list %}
+                {% for verb, irregular in verb_list %}
                 <div class="verb-item{% if irregular %} irregular{% endif %}">
                     <span class="verb-rank">{{ loop.index }}.</span>
-                    <span class="verb-name">{{ verb }}</span>
-                    <span class="verb-trans">{{ translation }}</span>
+                    <a href="https://www.wordreference.com/conj/frverbs.aspx?v={{ verb }}" target="_blank" rel="noopener" class="verb-name">{{ verb }}</a>
                 </div>
                 {% endfor %}
             </div>

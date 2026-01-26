@@ -350,6 +350,12 @@ h1 {
     font-size: 1rem;
 }
 
+.verb-list-legend {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 10px 0 0;
+}
+
 .verb-list {
     margin-top: 15px;
     display: grid;
@@ -375,11 +381,12 @@ h1 {
 
 .verb-name {
     font-weight: 500;
+    text-decoration: none;
+    color: inherit;
 }
 
-.verb-trans {
-    color: #888;
-    font-size: 0.8rem;
+.verb-name:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 500px) {
