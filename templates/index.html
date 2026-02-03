@@ -311,7 +311,8 @@
 
             if (result.correct) {
                 correctCount++;
-                feedback.innerHTML = '&#10004; Correct!';
+                const reversoLink = `<a href="${getReversoUrl(currentQuestion.verb)}" target="_blank" rel="noopener" class="reverso-link">&#128266;</a>`;
+                feedback.innerHTML = `&#10004; Correct! ${reversoLink}`;
                 feedback.className = 'feedback correct';
 
                 // If this was a review item, increment its correct count
@@ -335,7 +336,8 @@
             } else {
                 // Reset mastery on wrong answer
                 delete masteryMap[key];
-                feedback.innerHTML = `&#10008; Incorrect. The answer is: <strong>${result.expected}</strong>`;
+                const reversoLink = `<a href="${getReversoUrl(currentQuestion.verb)}" target="_blank" rel="noopener" class="reverso-link">&#128266;</a>`;
+                feedback.innerHTML = `&#10008; Incorrect. The answer is: <strong>${result.expected}</strong> ${reversoLink}`;
                 feedback.className = 'feedback incorrect';
 
                 // Add to review queue
@@ -353,7 +355,8 @@
 
         function skip() {
             totalCount++;
-            feedback.innerHTML = `Skipped. The answer was: <strong>${currentQuestion.correct}</strong>`;
+            const reversoLink = `<a href="${getReversoUrl(currentQuestion.verb)}" target="_blank" rel="noopener" class="reverso-link">&#128266;</a>`;
+            feedback.innerHTML = `Skipped. The answer was: <strong>${currentQuestion.correct}</strong> ${reversoLink}`;
             feedback.className = 'feedback skipped';
 
             // Add to review queue
@@ -366,6 +369,11 @@
             nextBtn.style.display = 'inline-block';
             skipBtn.style.display = 'none';
             nextBtn.focus();
+        }
+
+        function getReversoUrl(verb) {
+            // Handle reflexive verbs: "se passer" -> "se-passer"
+            return `https://conjugator.reverso.net/conjugation-french-verb-${verb.replace(/ /g, '-')}.html`;
         }
 
         function updateScore() {
