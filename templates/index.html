@@ -15,7 +15,7 @@
             <div class="tense-filters">
                 {% for key, name in tenses.items() %}
                 <label>
-                    <input type="checkbox" class="tense-checkbox" value="{{ key }}" checked>
+                    <input type="checkbox" class="tense-checkbox" value="{{ key }}" {{ 'checked' if key != 'imparfait' else '' }}>
                     {{ name }}
                 </label>
                 {% endfor %}
@@ -41,10 +41,10 @@
             <h3>Pronouns:</h3>
             <div class="pronoun-filters">
                 <label><input type="checkbox" class="pronoun-checkbox" value="0" checked> je</label>
-                <label><input type="checkbox" class="pronoun-checkbox" value="1" checked> tu</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="1"> tu</label>
                 <label><input type="checkbox" class="pronoun-checkbox" value="2" checked> il/elle</label>
                 <label><input type="checkbox" class="pronoun-checkbox" value="3" checked> on</label>
-                <label><input type="checkbox" class="pronoun-checkbox" value="4" checked> nous</label>
+                <label><input type="checkbox" class="pronoun-checkbox" value="4"> nous</label>
                 <label><input type="checkbox" class="pronoun-checkbox" value="5" checked> vous</label>
                 <label><input type="checkbox" class="pronoun-checkbox" value="6" checked> ils/elles</label>
             </div>
