@@ -161,7 +161,7 @@ def tts():
         return jsonify({"error": "no text"}), 400
 
     mp3 = BytesIO()
-    gTTS(text=text, lang="fr").write_to_fp(mp3)
+    gTTS(text=text, lang="fr", tld="fr").write_to_fp(mp3)
     mp3.seek(0)
 
     res = make_response(send_file(mp3, mimetype="audio/mpeg"))
