@@ -1,5 +1,7 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, make_response, send_file
 import random
+from io import BytesIO
+from gtts import gTTS
 from verbs import VERBS, PRONOUNS, TENSES, get_verb_translation
 
 app = Flask(__name__)
@@ -142,6 +144,29 @@ def check():
         "correct": is_correct,
         "expected": correct_answer
     })
+
+
+@app.route("/api/tts", methods=["POST", "OPTIONS"])
+def tts():
+    if request.method == "OPTIONS":
+        res = make_response()
+        res.headers["Access-Control-Allow-Origin"] = "*"
+        res.headers["Access-Control-Allow-Headers"] = "Content-Type"
+        res.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        return res
+
+    data = request.get_json()
+    text = (data or {}).get("text", "")
+    if not text:
+        return jsonify({"error": "no text"}), 400
+
+    mp3 = BytesIO()
+    gTTS(text=text, lang="fr").write_to_fp(mp3)
+    mp3.seek(0)
+
+    res = make_response(send_file(mp3, mimetype="audio/mpeg"))
+    res.headers["Access-Control-Allow-Origin"] = "*"
+    return res
 
 
 if __name__ == "__main__":
