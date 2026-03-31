@@ -67,7 +67,7 @@
 
             <div class="conjugation-prompt">
                 <span class="pronoun" id="pronoun">-</span>
-                <input type="text" id="answer-input" placeholder="Type conjugation..." autocomplete="off" autofocus autocapitalize="none">
+                <input type="text" id="answer-input" placeholder="Type conjugation..." autocomplete="off" autocapitalize="none">
             </div>
 
             <div class="feedback" id="feedback"></div>
@@ -264,7 +264,7 @@
 
             answerInput.value = '';
             answerInput.disabled = false;
-            answerInput.focus();
+            answerInput.focus({ preventScroll: true });
             feedback.textContent = '';
             feedback.className = 'feedback';
             submitBtn.style.display = 'inline-block';
@@ -336,7 +336,7 @@
             submitBtn.style.display = 'none';
             nextBtn.style.display = 'inline-block';
             skipBtn.style.display = 'none';
-            nextBtn.focus();
+            nextBtn.focus({ preventScroll: true });
         }
 
         function skip() {
@@ -354,7 +354,7 @@
             submitBtn.style.display = 'none';
             nextBtn.style.display = 'inline-block';
             skipBtn.style.display = 'none';
-            nextBtn.focus();
+            nextBtn.focus({ preventScroll: true });
         }
 
         function getReversoUrl(verb) {

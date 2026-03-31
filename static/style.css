@@ -33,8 +33,9 @@ h1 {
 }
 
 .settings h3 {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
     margin-bottom: 10px;
 }
 
@@ -117,6 +118,8 @@ h1 {
     justify-content: space-between;
     align-items: center;
     font-size: 1rem;
+    font-weight: 600;
+    color: #333;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -306,7 +309,8 @@ h1 {
 
 .other-apps-link a {
     color: rgba(255,255,255,0.9);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: underline;
 }
 
