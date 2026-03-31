@@ -299,40 +299,15 @@ h1 {
     background: #5a6268;
 }
 
-.accent-helper {
-    background: rgba(255,255,255,0.9);
-    border-radius: 12px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.other-apps-link {
+    text-align: center;
+    margin: 10px 0;
 }
 
-.accent-helper p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.accent-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.accent-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.1rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: white;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.accent-btn:hover {
-    background: #667eea;
-    color: white;
-    border-color: #667eea;
+.other-apps-link a {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    text-decoration: underline;
 }
 
 .verb-list-section {
@@ -401,6 +376,10 @@ h1 {
 }
 
 @media (max-width: 500px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+
     .verb-infinitive {
         font-size: 2rem;
     }

@@ -79,23 +79,8 @@
             </div>
         </div>
 
-        <div class="accent-helper">
-            <p>Click to insert accented characters:</p>
-            <div class="accent-buttons">
-                <button class="accent-btn" data-char="é">é</button>
-                <button class="accent-btn" data-char="è">è</button>
-                <button class="accent-btn" data-char="ê">ê</button>
-                <button class="accent-btn" data-char="ë">ë</button>
-                <button class="accent-btn" data-char="à">à</button>
-                <button class="accent-btn" data-char="â">â</button>
-                <button class="accent-btn" data-char="ù">ù</button>
-                <button class="accent-btn" data-char="û">û</button>
-                <button class="accent-btn" data-char="î">î</button>
-                <button class="accent-btn" data-char="ï">ï</button>
-                <button class="accent-btn" data-char="ô">ô</button>
-                <button class="accent-btn" data-char="ç">ç</button>
-                <button class="accent-btn" data-char="œ">œ</button>
-            </div>
+        <div class="other-apps-link">
+            <a href="https://redhoop.com/user/michelle?category=Language" target="_blank" rel="noopener">Check out Michelle's other French apps</a>
         </div>
 
         <details class="verb-list-section">
@@ -401,19 +386,6 @@
                     checkAnswer();
                 }
             }
-        });
-
-        // Accent button helpers
-        document.querySelectorAll('.accent-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const char = btn.dataset.char;
-                const start = answerInput.selectionStart;
-                const end = answerInput.selectionEnd;
-                const value = answerInput.value;
-                answerInput.value = value.substring(0, start) + char + value.substring(end);
-                answerInput.selectionStart = answerInput.selectionEnd = start + 1;
-                answerInput.focus();
-            });
         });
 
         // Reset session
